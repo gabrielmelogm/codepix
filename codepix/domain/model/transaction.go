@@ -60,11 +60,13 @@ func (t *Transaction) isValid() error {
 
 func NewTransaction(accountFrom *Account, amount float64, pixKeyTo *PixKey, description string, id string) (*Transaction, error) {
 	transaction := Transaction{
-		AccountFrom: accountFrom,
-		Amount:      amount,
-		PixKeyTo:    pixKeyTo,
-		Status:      TransactionPending,
-		Description: description,
+		AccountFrom:   accountFrom,
+		AccountFromID: accountFrom.ID,
+		Amount:        amount,
+		PixKeyTo:      pixKeyTo,
+		PixKeyIdTo:    pixKeyTo.ID,
+		Status:        TransactionPending,
+		Description:   description,
 	}
 
 	if id == "" {

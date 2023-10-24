@@ -2,17 +2,12 @@ syntax = "proto3";
 
 package github.com.gabrielmelogm.codepix;
 
-option go_package = "protofiles;pb";
+option go_package = "./application/grpc/protofiles;pb";
 
 message PixKeyRegistration {
   string kind = 1;
   string key = 2;
   string accountId = 3;
-}
-
-message PixKey {
-  string kind = 1;
-  string key = 2;
 }
 
 message PixKey {
